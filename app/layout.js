@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className='w-screen bg-gray-100'>
 				<Navbar/>
-				<div className='mt-20 md:w'>
+				<div className='container mx-auto mt-20 md:w'>
 					{children}
 				</div>
 			</body>
