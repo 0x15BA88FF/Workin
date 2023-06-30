@@ -5,17 +5,14 @@ export default async function handler(req, res) {
 		try {
 			const client = await clientPromise;
 			const db = client.db("workin");
-		
-			let id = req.query.id || none
-			let query = json(req.query.query) || {}
-			let sort = json(req.query.sort) || { metacritic: -1 }
+
 			let skip = parseInt(req.query.skip) || 0
 			let limit = parseInt(req.query.limit) || 20
 
 			const jobs = await db
 				.collection("jobs")
-				.find(query)
-				.sort(sort)
+				.find({})
+				.sort({ metacritic: -1 })
 				.limit(limit)
 				.skip(skip)
 				.toArray();
