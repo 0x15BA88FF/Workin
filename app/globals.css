@@ -17,8 +17,11 @@ a:focus {
 .text-wrap {
     text-wrap: wrap;
 }
+.listing {
+    width: 100%;
+}
 @media (min-width: 768px) {
-    .md\:right-Listing {
+    .listing {
         width: calc(100% - 320px);
     }
 }
